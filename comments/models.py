@@ -25,7 +25,12 @@ class Reply(models.Model):
     comment = models.ForeignKey(
         Comment,
         on_delete=models.CASCADE,
-        related_name="reply",
+        related_name="replies",
+    )
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name="user_reply",
     )
     text = models.TextField()
     date = models.DateTimeField(auto_now_add=True)

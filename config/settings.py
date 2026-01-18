@@ -58,7 +58,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8080",  # La URL del front
+    "http://localhost:5173",  # La URL del front
 ]
 
 ROOT_URLCONF = "config.urls"

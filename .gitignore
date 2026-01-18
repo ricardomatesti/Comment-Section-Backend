@@ -1,0 +1,26 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+env/
+ENV/
+
+# --- Django ---
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+
+# --- Base de Datos y Logs ---
+*.log
+.postgresql/
+
+# --- VS Code / Editores ---
+.vscode/
+.idea/
+*.swp
+
+# --- AWS (Si usas credenciales locales) ---
+.aws/

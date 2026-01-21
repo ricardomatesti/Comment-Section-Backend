@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 from dotenv import load_dotenv
 import os
+import dj_database_url
 
 load_dotenv()
 
@@ -59,8 +60,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # La URL del front
-    "comment-section-bay-five.vercel.app",
-    "https://comment-section-bay-five.vercel.app/",
+    "https://comment-section-bay-five.vercel.app",
 ]
 
 ROOT_URLCONF = "config.urls"

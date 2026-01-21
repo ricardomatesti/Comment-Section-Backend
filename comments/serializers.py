@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, Comment
+from .models import Reply, User, Comment
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -11,10 +11,20 @@ class UserSerializer(serializers.ModelSerializer):
 class ReplySerializer(serializers.ModelSerializer):
     user_name = serializers.ReadOnlyField(source="user.name")
     user_photo_url = serializers.ReadOnlyField(source="user.photo_url")
+    comment = serializers.PrimaryKeyRelatedField(queryset=Comment.objects.all())
 
     class Meta:
-        model = Comment
-        fields = ["id", "user", "user_name", "user_photo_url", "text", "date"]
+        model = Reply
+        fields = [
+            "id",
+            "user",
+            "user_name",
+            "user_photo_url",
+            "text",
+            "date",
+            "comment",
+            "votes",
+        ]
 
 
 class CommentSerializer(serializers.ModelSerializer):
@@ -32,4 +42,5 @@ class CommentSerializer(serializers.ModelSerializer):
             "text",
             "date",
             "replies",
+            "votes",
         ]

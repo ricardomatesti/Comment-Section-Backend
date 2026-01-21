@@ -19,6 +19,7 @@ class Comment(models.Model):
     )
     text = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
+    votes = models.IntegerField()
 
 
 class Reply(models.Model):
@@ -34,3 +35,4 @@ class Reply(models.Model):
     )
     text = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
+    votes = models.IntegerField()
